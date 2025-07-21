@@ -3,6 +3,11 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSchema } from "@shared/schema";
 import { z } from "zod";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission
@@ -38,17 +43,21 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Download brochure endpoint
   app.get("/api/brochure/download", async (req, res) => {
-    // In a real implementation, you would serve an actual PDF file
-    // For now, we'll simulate the download
     try {
+      const brochurePath = path.join(__dirname, '../public/brochure/Treat-Your-Car-Brochure.pdf');
+      
       res.setHeader('Content-Type', 'application/pdf');
       res.setHeader('Content-Disposition', 'attachment; filename="Treat-Your-Car-Brochure.pdf"');
-      res.setHeader('Content-Length', '1024');
       
-      // Send mock PDF content
-      const mockPdfContent = Buffer.from("Mock PDF content for Treat Your Car brochure", 'utf-8');
-      res.send(mockPdfContent);
+      // Send the actual PDF file
+      res.sendFile(brochurePath, (err) => {
+        if (err) {
+          console.error('Error sending brochure file:', err);
+          res.status(500).json({ message: "Error downloading brochure" });
+        }
+      });
     } catch (error) {
+      console.error('Brochure download error:', error);
       res.status(500).json({ message: "Error downloading brochure" });
     }
   });
