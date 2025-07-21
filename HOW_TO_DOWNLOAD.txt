@@ -1,0 +1,45 @@
+🚗 TREAT YOUR CAR WEBSITE - DOWNLOAD INSTRUCTIONS 🚗
+
+📥 HOW TO GET YOUR WEBSITE FILES:
+
+OPTION 1: Download from Replit (Easiest)
+========================================
+1. In Replit, click the 3-dot menu next to "Files" 
+2. Select "Download as ZIP"
+3. Extract the ZIP file to your computer
+4. Open the extracted folder in VS Code
+
+OPTION 2: Manual File Download
+==============================
+If the ZIP download doesn't work, manually download these key files:
+
+REQUIRED FILES TO COPY:
+├── client/ (entire folder)
+├── server/ (entire folder) 
+├── shared/ (entire folder)
+├── public/ (entire folder)
+├── .vscode/ (entire folder)
+├── package.json
+├── tsconfig.json
+├── tailwind.config.ts
+├── vite.config.ts
+├── vercel.json
+├── .env.example
+├── README.md
+├── DEPLOYMENT_GUIDE.md
+
+🛠️ AFTER DOWNLOADING:
+
+1. Open VS Code
+2. Open the project folder
+3. Install recommended extensions (VS Code will prompt)
+4. Open terminal and run: npm install
+5. Copy .env.example to .env
+6. Run: npm run dev
+
+📁 YOUR PROJECT IS READY!
+
+The website will run at: http://localhost:5000
+
+📞 NEED HELP?
+Check README.md and DEPLOYMENT_GUIDE.md for detailed instructions.
