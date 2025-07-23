@@ -1,6 +1,6 @@
 import HeroCarousel from "@/components/HeroCarousel";
 import About from "@/components/About";
-import WhyChooseUs from "@/components/WhychooseUs";
+import WhyChooseUs from '../components/Whychooseus';
 import Works from "@/components/Works";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
