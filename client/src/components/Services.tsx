@@ -1,36 +1,36 @@
-import { CarFront, Sparkles, Shield, Wrench, Settings, Smartphone, Check } from "lucide-react";
+import { CarFront, Sparkles, Shield, Wrench, Settings, Smartphone, Check, Waves, SprayCanIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
   {
     icon: CarFront,
-    title: "Car Washing",
-    description: "Professional exterior and interior washing with premium products and techniques.",
-    features: ["Exterior wash & wax", "Interior vacuum & wipe", "Tire & rim cleaning"]
-  },
-  {
-    icon: Sparkles,
-    title: "Auto Detailing",
-    description: "Complete detailing service to restore your car's showroom appearance.",
-    features: ["Paint correction & polish", "Interior deep cleaning", "Protective coating"]
+    title: "Mini Valet",
+    description: "Quick refresh for both interior and exterior.",
+    features: ["Snow foam pre-wash & hand wash", "Tyres shined & wheels cleaned", "Interior vacuum & dashboard wiped"]
   },
   {
     icon: Shield,
-    title: "Paint Protection",
-    description: "Advanced protection solutions including ceramic coating and paint protection film.",
-    features: ["Ceramic coating application", "Paint protection film", "Long-term warranty"]
+    title: "Full Valet",
+    description: "Comprehensive car cleaning inside and out.",
+    features: ["Spot stain removal & fresh fragrance", "Interior deep cleaning", "Boot, vents & wheel arches cleaned"]
   },
   {
-    icon: Wrench,
-    title: "Maintenance",
-    description: "Regular maintenance services to keep your vehicle running at peak performance.",
-    features: ["Oil change & filter", "Brake inspection", "Fluid top-up"]
+    icon: Sparkles,
+    title: "Deep Clean Valet",
+    description: "Complete detailing service to restore your car's showroom appearance",
+    features: ["Ceramic coating application", "Upholstery shampoo & carpet extraction", "Plastic trims & vents deep-cleaned," , "Intense exterior treatment"]
   },
   {
     icon: Settings,
-    title: "Engine Care",
-    description: "Specialized engine cleaning and maintenance for optimal performance.",
-    features: ["Engine bay cleaning", "Performance tuning", "Diagnostic check"]
+    title: "Engine Bay Detail",
+    description: "Enhance engine appearance & cleanliness.",
+    features: ["Safe degreasing & steam cleaning", "Professional finish & resale boost", "Engine bay cleaning"]
+  },
+  {
+    icon: SprayCanIcon,
+    title: "Seats & Dashboard Polish",
+    description: "Bring life back to your car’s interior.",
+    features: ["Vacuumed seats & dust removal", "Polished dashboard with premium shine", "Fresh, clean interior feeling"]
   },
   {
     icon: Smartphone,
@@ -61,10 +61,10 @@ export default function Services() {
                 key={index}
                 className="service-card bg-gray-900 p-8 rounded-xl hover:bg-gray-700 transition-all duration-300 transform hover:scale-105 cursor-pointer"
               >
-                <div className="text-4xl text-blue-500 mb-4">
-                  <IconComponent className="w-10 h-10" />
+                <div className="text-4xl text-blue-500 mb-4 justify-center flex">
+                  <IconComponent className="w-10 h-10 " />
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                <h3 className="text-2xl font-bold mb-4 justify-center flex">{service.title}</h3>
                 <p className="text-gray-300 mb-6">{service.description}</p>
                 <div className="space-y-2 text-sm text-gray-400">
                   {service.features.map((feature, featureIndex) => (
@@ -79,26 +79,6 @@ export default function Services() {
           })}
         </div>
         
-        {/* Featured Service Image */}
-        <div className="mt-16 text-center">
-          <h3 className="text-3xl font-bold mb-8">Featured Service Package</h3>
-          <div className="max-w-4xl mx-auto">
-            <img 
-              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=600" 
-              alt="Comprehensive detailing service showcase" 
-              className="rounded-xl shadow-2xl w-full h-auto mb-8"
-            />
-            <Button 
-              onClick={() => {
-                const element = document.getElementById('contact');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
-            >
-              Book Premium Package
-            </Button>
-          </div>
-        </div>
       </div>
     </section>
   );

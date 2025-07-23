@@ -1,41 +1,52 @@
 import { Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import minivalet from "../images/minivalet.jpg"; 
+import fullValet from "../images/fullvalet.jpg"; 
+import interiorcleaning from "../images/interiorcleaning.jpg"; 
+import seatscleaning from "../images/seatscleaning.jpg";
+import enginebay from "../images/polishingcar.jpg";
+import ceramiccoating from "../images/ceramiccoating.jpg";
+
 
 const works = [
   {
-    image: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-    title: "Premium Detailing",
-    description: "Complete interior and exterior detailing service",
+    image: minivalet,
+    title: "Mini Valet",
+    description: "Exterior wash with snow foam, tyre shine, full interior vacuum & window clean.",
+    duration: "45min -1 hour"
+  },
+  {
+    image: fullValet,
+    alt : "Full Valet Service",
+    title: "Full Valet Detailing",
+    description: "Includes Mini Valet plus boot clean, plastic dressing, stain removal & fragrance.",
+    duration: "1-2 Hours"
+  },
+  
+  {
+    image: interiorcleaning,
+    title: " Deep Valet",
+    description: "Long-lasting protection with ceramic coating",
     duration: "3-4 Hours"
   },
   {
-    image: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-    title: "Paint Correction",
-    description: "Professional paint restoration and protection",
-    duration: "5-6 Hours"
+    image: seatscleaning,
+    alt: "Seat Cleaning",
+    title: "Seats Cleaning & Dashboard Polish",
+    description: "Vacuumed seats and dashboard cleaned with premium shine polish.",
+    duration: "1 Hour"
   },
   {
-    image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-    title: "Ceramic Coating",
-    description: "Long-lasting protection with ceramic coating",
-    duration: "6-8 Hours"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-    title: "Interior Deep Clean",
-    description: "Complete interior sanitization and restoration",
-    duration: "2-3 Hours"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
+    image: enginebay,
     title: "Engine Bay Detail",
     description: "Professional engine cleaning and protection",
     duration: "1-2 Hours"
   },
   {
-    image: "https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=300",
-    title: "Premium Wash",
-    description: "Full-service wash with premium products",
+    image: ceramiccoating,
+    alt: "Ceramic Coating",
+    title: "ceramic caoting",
+    description: "polishing ceramic coating for advanced protection that enchances shines.",
     duration: "45-60 Min"
   }
 ];
@@ -49,7 +60,7 @@ export default function Works() {
             Our <span className="text-blue-500">Works</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            See the transformation and quality of our automotive care services
+            Transforming every ride with unmatched detailing precision.
           </p>
         </div>
         
@@ -76,17 +87,6 @@ export default function Works() {
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <Button 
-            onClick={() => {
-              const element = document.getElementById('contact');
-              if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
-          >
-            View All Works
-          </Button>
-        </div>
       </div>
     </section>
   );

@@ -1,24 +1,27 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import slide1 from "../images/contact-img.png";
+import slide2 from "../images/car images.png"; // Example image, replace with actual path
+import slide3 from "../images/carclean.png"; // Example image, replace with actual
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080",
+    image: slide1,
     title: "Premium Auto Care Services",
     subtitle: "Experience luxury car care with professional expertise and attention to detail",
     primaryButton: "Get Started",
     secondaryButton: "Learn More"
   },
   {
-    image: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080",
+    image: slide2,
     title: "Expert Detailing Services",
     subtitle: "Restore your car's beauty with our professional detailing and care services",
     primaryButton: "Book Service",
     secondaryButton: "View Gallery"
   },
   {
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080",
+    image: slide3,
     title: "Professional Car Wash",
     subtitle: "State-of-the-art facilities and eco-friendly solutions for the perfect clean",
     primaryButton: "Schedule Now",
@@ -58,7 +61,7 @@ export default function HeroCarousel() {
 
   return (
     <section id="home" className="relative h-screen overflow-hidden">
-      <div className="carousel-container relative w-full h-full">
+      <div className="carousel-container relative w-full h-full ">
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -71,7 +74,7 @@ export default function HeroCarousel() {
               backgroundPosition: 'center',
             }}
           >
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 flex items-center justify-center pt- md:pt-44">
               <div className="text-center px-4 max-w-4xl mx-auto">
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">
                   {slide.title.split(' ').map((word, wordIndex) => (
@@ -95,7 +98,7 @@ export default function HeroCarousel() {
                   <Button 
                     variant="outline"
                     onClick={() => scrollToSection('about')}
-                    className="border-2 border-white hover:bg-white hover:text-black px-8 py-4 rounded-lg font-semibold transition-all duration-300 text-white"
+                    className="border-2 bg-black border-white hover:bg-white hover:text-black px-8 py-4 rounded-lg font-semibold transition-all duration-300 text-white"
                   >
                     {slide.secondaryButton}
                   </Button>
@@ -107,7 +110,7 @@ export default function HeroCarousel() {
       </div>
       
       {/* Carousel Controls */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 py-2">
         {slides.map((_, index) => (
           <button
             key={index}
