@@ -81,7 +81,7 @@ export default function ContactForm() {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2 text-white">Select a Service</label>
+              <label className="block text-sm font-medium mb-1 text-white">Select a Service</label>
               <ServiceSelect value={service} onChange={setService} />
             </div>
             <Textarea name="message" placeholder="Your message..." rows={4} required className="bg-gray-800 border border-gray-600 text-white" />

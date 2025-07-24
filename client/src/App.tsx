@@ -1,10 +1,11 @@
+// src/App.tsx
 import { Route, Switch } from "wouter";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 // Page imports
 import HomePage from "@/pages/Home";
-import ContactPage from "@/pages/ContactFormPage";
+import ContactPage from "@/pages/ContactFormPage"; // ✅ Corrected path
 import AboutPage from "@/components/About";
 import ServicesPage from "@/components/Services";
 import WorksPage from "@/components/Works";
