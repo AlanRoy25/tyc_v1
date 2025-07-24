@@ -182,7 +182,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
           <p>
-            &copy; 2025 Treat Your Car. All rights reserved. Designed by Zuriel ❤️
+            &copy; 2025 Treat Your Car. All rights reserved. Designed by Zuriel 
             for treat your car.
           </p>
         </div>
