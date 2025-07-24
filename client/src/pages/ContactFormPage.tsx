@@ -1,5 +1,5 @@
 // src/pages/ContactFormPage.tsx
-import ContactForm from "@/components/ContactForm";
+import ContactForm from "@/components/Contact";
 
 export default function ContactFormPage() {
   return (
