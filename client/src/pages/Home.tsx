@@ -3,7 +3,7 @@ import About from "@/components/About";
 import WhyChooseUs from '../components/Whychooseus';
 import Works from "@/components/Works";
 import Services from "@/components/Services";
-import Contact from "@/components/Contact";
+import ContactForm  from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
       <section id="whychooseus"><WhyChooseUs /></section>
       <section id="works"><Works /></section>
       <section id="services"><Services /></section>
-      <section id="contact"><Contact /></section>
+      <section id="contact"><ContactForm /></section>
       <Footer />
     </div>
   );

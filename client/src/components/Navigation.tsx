@@ -58,9 +58,9 @@ export default function Navigation() {
               <button onClick={() => scrollToSection("works")} className="px-3 py-2 rounded-md text-lg font-medium hover:text-blue-400 transition-colors duration-300">Works</button>
               <button onClick={() => scrollToSection("services")} className="px-3 py-2 rounded-md text-lg font-medium hover:text-blue-400 transition-colors duration-300">Services</button>
               {/* Updated Contact Us Button */}
-              <Link href="/contactform#form" className="px-3 py-2 rounded-md text-lg font-medium hover:text-blue-400 transition-colors duration-300">
+              <a href="#contact" className="px-3 py-2 rounded-md text-lg font-medium hover:text-blue-400 transition-colors duration-300">
                 Contact Us
-              </Link>
+              </a>
               <Button onClick={downloadBrochure} className="bg-blue-600 hover:bg-blue-700 text-lg font-medium transition-all duration-300 transform hover:scale-105">
                 <Download className="w-4 h-4 mr-2" />
                 Download Brochure
@@ -87,9 +87,9 @@ export default function Navigation() {
             <button onClick={() => scrollToSection("works")} className="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition-colors duration-300 w-full text-left">Works</button>
             <button onClick={() => scrollToSection("services")} className="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition-colors duration-300 w-full text-left">Services</button>
             {/* Updated Contact Us mobile*/}
-            <Link href="/contactform" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition-colors duration-300 w-full text-left">
+            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition-colors duration-300 w-full text-left">
               Contact Us
-            </Link>
+            </a>
             <Button onClick={downloadBrochure} className="w-full bg-blue-600 hover:bg-blue-700 text-base font-medium transition-colors duration-300 mt-2">
               <Download className="w-4 h-4 mr-1" />
               Download Brochure

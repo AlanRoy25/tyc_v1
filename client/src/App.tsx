@@ -2,14 +2,7 @@
 import { Route, Switch } from "wouter";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-
-// Page imports
 import HomePage from "@/pages/Home";
-import ContactPage from "@/pages/ContactFormPage"; // ✅ Corrected path
-import AboutPage from "@/components/About";
-import ServicesPage from "@/components/Services";
-import WorksPage from "@/components/Works";
-import WhyChooseUsPage from "@/components/Whychooseus";
 
 function App() {
   return (
@@ -17,11 +10,6 @@ function App() {
       <Toaster />
       <Switch>
         <Route path="/" component={HomePage} />
-        <Route path="/contactform" component={ContactPage} />
-        <Route path="/about" component={AboutPage} />
-        <Route path="/services" component={ServicesPage} />
-        <Route path="/works" component={WorksPage} />
-        <Route path="/whychooseus" component={WhyChooseUsPage} />
       </Switch>
     </TooltipProvider>
   );
