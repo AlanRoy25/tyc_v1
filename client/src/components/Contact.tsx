@@ -40,6 +40,7 @@ export default function ContactForm() {
   return (
     <section id="contact" className="py-20 bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Contact <span className="text-blue-500">Us</span>
@@ -49,56 +50,74 @@ export default function ContactForm() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
-            <p className="text-gray-300 mb-8">
-              Ready to give your car the care it deserves? Contact us today to
-              schedule an appointment or get a quote for our services.
-            </p>
-            <div className="space-y-6">
-              <ContactInfo icon={<MapPin />} title="Location" content="Evesham, Worchester, Redditch, Cheltenham" />
-              <ContactInfo icon={<Phone />} title="Phone" content="+01905 948868 / 07350 249369" />
-              <ContactInfo icon={<Mail />} title="Email" content="info@treatyourcar.co.uk" />
-              <ContactInfo icon={<Clock />} title="Hours" content="Mon-Sun: 8AM-6PM" />
-            </div>
+        {/* Contact Form */}
+        <form onSubmit={handleSubmit} className="space-y-6 mb-16">
+          <div className="grid md:grid-cols-2 gap-6">
+            <Input name="firstName" placeholder="First Name" required className="bg-gray-800 border border-gray-600 text-white" />
+            <Input name="lastName" placeholder="Last Name" required className="bg-gray-800 border border-gray-600 text-white" />
           </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              className="bg-gray-800 border border-gray-600 text-white"
+            />
+            <Input
+              name="phone"
+              placeholder="Phone Number with +44 7123 456 789"
+              required
+              pattern="^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$"
+              title="Enter a valid UK phone number"
+              className="bg-gray-800 border border-gray-600 text-white"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1 text-white">Select a Service</label>
+            <ServiceSelect value={service} onChange={setService} />
+          </div>
+          <Textarea
+            name="message"
+            placeholder="Your message..."
+            rows={4}
+            required
+            className="bg-gray-800 border border-gray-600 text-white"
+          />
+          <Button
+            type="submit"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg"
+          >
+            Send Message
+          </Button>
+        </form>
 
-          <form id="form" onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <Input name="firstName" placeholder="First Name" required className="bg-gray-800 border border-gray-600 text-white" />
-              <Input name="lastName" placeholder="Last Name" required className="bg-gray-800 border border-gray-600 text-white" />
-            </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              <Input type="email" name="email" placeholder="Email" required className="bg-gray-800 border border-gray-600 text-white" />
-              <Input
-                name="phone"
-                placeholder="Phone Number with +44 7123 456 789"
-                required
-                pattern="^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$"
-                title="Enter a valid UK phone number"
-                className="bg-gray-800 border border-gray-600 text-white"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-1 text-white">Select a Service</label>
-              <ServiceSelect value={service} onChange={setService} />
-            </div>
-            <Textarea name="message" placeholder="Your message..." rows={4} required className="bg-gray-800 border border-gray-600 text-white" />
-            <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg">
-              Send Message
-            </Button>
-          </form>
+        {/* Contact Info Section - below form */}
+        <div className="text-center">
+          <h3 className="text-2xl font-bold mb-6">Our Contact Information</h3>
+          <p className="text-gray-300 mb-10 max-w-xl mx-auto">
+            You can also reach us using the following details:
+          </p>
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-center text-center">
+            <ContactInfo icon={<MapPin />} title="Location" content="Evesham, Worchester, Redditch, Cheltenham" />
+            <ContactInfo icon={<Phone />} title="Phone" content="+01905 948868 / 07350 249369" />
+            <ContactInfo icon={<Mail />} title="Email" content="info@treatyourcar.co.uk" />
+            <ContactInfo icon={<Clock />} title="Hours" content="Mon-Sun: 8AM - 6PM" />
+          </div>
         </div>
       </div>
 
+      {/* Submission Popup */}
       {isSubmitted && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white text-black p-6 rounded-lg shadow-lg max-w-sm w-full">
             <h3 className="text-xl font-bold mb-2">Thank You!</h3>
             <p className="mb-4">Your message has been sent successfully.</p>
             <p className="mb-2">Our team will contact you shortly.</p>
-            <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" onClick={() => setIsSubmitted(false)}>
+            <button
+              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              onClick={() => setIsSubmitted(false)}
+            >
               Close
             </button>
           </div>
@@ -110,12 +129,10 @@ export default function ContactForm() {
 
 function ContactInfo({ icon, title, content }: { icon: React.ReactNode; title: string; content: string }) {
   return (
-    <div className="flex items-center">
-      <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">{icon}</div>
-      <div>
-        <h4 className="font-semibold">{title}</h4>
-        <p className="text-gray-300">{content}</p>
-      </div>
+    <div className="flex flex-col items-center">
+      <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-2">{icon}</div>
+      <h4 className="font-semibold">{title}</h4>
+      <p className="text-gray-300">{content}</p>
     </div>
   );
 }
